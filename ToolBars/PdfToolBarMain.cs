@@ -176,7 +176,7 @@ namespace Patagames.Pdf.Net.Controls.Wpf.ToolBars
 			dlg.AllowSomePages = true;
 			dlg.UseEXDialog = true;
 			dlg.Document = printDoc;
-			OnPdfPrinDocumentCreaded(new EventArgs<PdfPrintDocument>(printDoc));
+			OnPdfPrintDocumentCreated(new EventArgs<PdfPrintDocument>(printDoc));
 			ShowPrintDialogDelegate showprintdialog = ShowPrintDialog;
 			Dispatcher.BeginInvoke(showprintdialog, dlg);
         }
@@ -185,7 +185,7 @@ namespace Patagames.Pdf.Net.Controls.Wpf.ToolBars
 		/// Occurs after an instance of PdfPrintDocument class is created and before printing is started.
 		/// </summary>
         /// <param name="e">Event arguments</param>
-        protected virtual void OnPdfPrinDocumentCreaded(EventArgs<PdfPrintDocument> e)
+        protected virtual void OnPdfPrintDocumentCreated(EventArgs<PdfPrintDocument> e)
 		{
 			if (PdfPrintDocumentCreated != null)
 				PdfPrintDocumentCreated(this, e);
